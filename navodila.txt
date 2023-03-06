@@ -1,0 +1,46 @@
+
+KAM SHRANITI DOWNLOADED DATOTEKE
+0. download here: https://civitai.com/
+1. TEXTUAL INVERSION: webui\embeddings
+2. LORA: webui\models\Lora
+3. HYPERNETWORK: webui\models\hypernetworks
+4. CHECKPOINT: webui\models\Stable-diffusion
+
+Če imaš webui že odprt in naložiš novo datoteko, moraš webui restartat (Settings->Reload UI)
+
+KAKO UPORABLATI LORA, HYPERNETWORK, TEXTUAL INVERSION
+1. odpri run.bat
+2. v brskalniku odpri naslov http://127.0.0.1:7860/
+3. izberi zavihek PNG info
+4. nalož sliko primer.png
+5. klikn 'Send to txt2img'
+6. na koncu texta boš vidu primer uporabe.
+   . <lora:IME LORA DATOTEKE:0.X>
+   . <hypernet:IME HYPRN DATOTEKE:0.X>
+   . textual inversion (IME TI:0.x)
+          . vrednosti grejo od 0.0-1.0. ponavad piše
+            vedno ko downloadaš kakšno vplivno moč
+            priporočajo in katere besede uporabt v promptu
+            za boljši rezultat. lahko pa experimentiraš.
+
+DELOVANJE CONTROLNET
+- ControlNet posnema pozo na sliki, ali pa celo sliko.
+  Priporočam, da sprobaš openpose in depth.
+0. AKTIVACIJA CONTROLET.
+	. možn za uporabo pri txt2img in img2img
+	. scrollaš dol in klikneš ControlNet.
+	. obklukaš enable
+	. naložiš sliko, ki jo želiš posnemat
+	. spremeniš canvas height/wwidth da se ujema s sliko
+	. weight se lahko igraš, ne priporočam nad 1.
+	. lahko izbereš Low VRAM. Rezultat ni neki drgačn i think
+	. pri vsaki generaciji boš imel eno dodatno generacijo, ki pokaže kaj program uponaša.
+1. OPENPOSE
+	. posnema pozo.
+	. Preprocessor: openpose
+	. Model: control_sd15_openpose
+2. DEPTH
+	. posnema depth field slike oziroma kr celo sliko. (priporočam)
+	. Preprocessor: depth
+	. Model: control_sd15_depth
+Ko zrihtaš controlnet lahko pol generiraš.
